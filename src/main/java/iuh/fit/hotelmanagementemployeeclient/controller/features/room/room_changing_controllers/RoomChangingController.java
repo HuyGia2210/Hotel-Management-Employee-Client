@@ -424,8 +424,7 @@ public class RoomChangingController {
                         DAOProvider.dao.getReservationRoomDetailDAO().changingRoom(
                                 roomWithReservation.getRoom().getRoomID(),
                                 newRoom.getRoomID(),
-                                roomWithReservation.getReservationForm().getReservationID(),
-                                employee.getEmployeeCode()
+                                roomWithReservation.getReservationForm().getReservationID()
                         );
 
                         dialogPane.showInformation("Thành Công", "Chuyển phòng thành công!");
