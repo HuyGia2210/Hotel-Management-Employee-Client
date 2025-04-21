@@ -1,0 +1,72 @@
+.button:hover {
+    -fx-background-color: RGB(58, 150, 228);
+    -fx-background-radius: 10;
+}
+
+.button:pressed {
+    -fx-background-color: RGB(70, 130, 180);
+}
+
+.button{
+    -fx-background-radius: 100;
+}
+
+.menu-bar-parent {
+   -fx-background-color: RGB(70, 130, 180);
+   -fx-text-fill: white;
+   -fx-font-weight: bold;
+   -fx-font-size: 24px;
+
+   -fx-background-radius: 0;
+   -fx-alignment: center-left;
+}
+
+.menu-bar-child {
+   -fx-background-color: RGB(70, 130, 180);
+   -fx-text-fill: white;
+   -fx-font-weight: normal;
+   -fx-font-size: 16px;
+
+   -fx-background-radius: 0;
+   -fx-alignment: center-left;
+   -fx-padding: 0 0 0 20px;
+}
+
+.scrollPane {
+    -fx-background-color: RGB(70, 130, 180);
+    -fx-border-color: RGB(70, 130, 180);
+}
+
+.scrollPane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scrollPane .scroll-bar:vertical {
+    -fx-pref-width: 10;
+}
+
+.scrollPane .scroll-bar:vertical .thumb {
+    -fx-background-radius: 5;
+}
+
+.scrollPane .scroll-bar:horizontal {
+    -fx-pref-height: 10;
+}
+
+.scrollPane .scroll-bar:horizontal .thumb {
+    -fx-background-radius: 5;
+}
+
+.menu-bar-topbar {
+    -fx-background-color: RGB(70, 130, 180);
+    -fx-alignment: center;
+    -fx-background-radius: 10;
+    -fx-border-color: transparent;
+    -fx-border-radius: 3;
+    -fx-border-width: 10px;
+}
+
+.menu-bar-topbar:hover {
+    -fx-border-color: RGB(58, 150, 228);
+
+}
