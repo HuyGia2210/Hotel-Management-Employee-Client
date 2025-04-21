@@ -231,8 +231,7 @@ public class ReservationFormDetailsController {
     private void handleCheckIn() {
         try {
             DAOProvider.dao.getReservationRoomDetailDAO().roomCheckingIn(
-                    reservationForm.getReservationID(),
-                    employee.getEmployeeCode()
+                    reservationForm.getReservationID()
             );
 
             roomWithReservation = DAOProvider.dao.getRoomWithReservationDAO()
@@ -247,8 +246,7 @@ public class ReservationFormDetailsController {
     private void handleEarlyCheckin() {
         try {
             String result = DAOProvider.dao.getReservationRoomDetailDAO().roomEarlyCheckingIn(
-                    reservationForm.getReservationID(),
-                    employee.getEmployeeCode()
+                    reservationForm.getReservationID()
             );
 
             switch (result) {

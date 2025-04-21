@@ -58,6 +58,8 @@ module iuh.fit.hotelmanagementemployeeclient {
     opens iuh.fit.hotelmanagementemployeeclient.controller.features.customer to javafx.fxml;
     opens iuh.fit.hotelmanagementemployeeclient.controller.features.employee to javafx.fxml;
 
+    opens iuh.fit.models.misc to javafx.fxml;
+
     opens iuh.fit.hotelmanagementemployeeclient.controller.features.room to javafx.fxml;
     opens iuh.fit.hotelmanagementemployeeclient.controller.features.room.checking_in_reservation_list_controllers to javafx.fxml;
     opens iuh.fit.hotelmanagementemployeeclient.controller.features.room.checking_out_controllers to javafx.fxml;
