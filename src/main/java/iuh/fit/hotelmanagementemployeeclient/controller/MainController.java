@@ -13,6 +13,7 @@ import iuh.fit.hotelmanagementemployeeclient.controller.features.room.RoomSearch
 import iuh.fit.hotelmanagementemployeeclient.controller.features.service.HotelServiceManagerController;
 import iuh.fit.hotelmanagementemployeeclient.controller.features.service.HotelServiceSearchingController;
 import iuh.fit.hotelmanagementemployeeclient.controller.features.TopController;
+import iuh.fit.hotelmanagementemployeeclient.utils.RoomManagementService;
 import iuh.fit.models.*;
 import iuh.fit.models.enums.Position;
 import iuh.fit.hotelmanagementemployeeclient.utils.TimelineManager;
@@ -49,6 +50,7 @@ public class MainController {
     // Không xóa
     public void initialize(Account account, Stage stage) {
         if (account == null) throw new IllegalArgumentException("Tài khoản không tồn tại");
+        RoomManagementService.startAutoCheckoutScheduler(this);
 
         this.account = account;
         this.mainStage = stage;
