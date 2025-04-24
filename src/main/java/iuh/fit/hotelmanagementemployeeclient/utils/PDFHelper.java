@@ -58,20 +58,14 @@ public class PDFHelper {
         PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(file));
         document.open();
 
-        InputStream fontStream = PDFHelper.class.getResourceAsStream("/iuh/fit/fonts/arial-unicode-ms.ttf");
-        if (fontStream == null) {
-            throw new IOException("Font not found");
-        }
-        BaseFont unicodeFont = BaseFont.createFont("arial-unicode-ms.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED, true, fontStream.readAllBytes(), null);
-
-        Font font = new Font(unicodeFont, 12);
-        Font titleFont = new Font(unicodeFont, 18, Font.BOLD, BaseColor.BLACK);
-        Font headerFont = new Font(unicodeFont, 12, Font.BOLD, BaseColor.BLACK);
+        Font font = new Font(Font.FontFamily.HELVETICA, 12);
+        Font titleFont = new Font(Font.FontFamily.HELVETICA, 18, Font.BOLD, BaseColor.BLACK);
+        Font headerFont = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD, BaseColor.BLACK);
 
         // ======================================================================
         // Thêm Watermark logo
         // ======================================================================
-        InputStream watermarkPath = PDFHelper.class.getResourceAsStream("/iuh/fit/imgs/hotel_logo.png");
+        InputStream watermarkPath = PDFHelper.class.getResourceAsStream("/iuh/fit/hotelmanagementemployeeclient/imgs/hotel_logo.png");
         if (watermarkPath == null) {
             throw new IOException("Watermark image not found");
         }
@@ -99,7 +93,7 @@ public class PDFHelper {
         headerTable.setWidths(new int[]{1, 3, 1});
 
         // Cột 1: Logo
-        InputStream logoPath = PDFHelper.class.getResourceAsStream("/iuh/fit/icons/login_panel_icons/ic_hotel.png");
+        InputStream logoPath = PDFHelper.class.getResourceAsStream("/iuh/fit/hotelmanagementemployeeclient/icons/login_panel_icons/ic_hotel.png");
         Image logo = Image.getInstance(Objects.requireNonNull(logoPath).readAllBytes());
         logo.scaleToFit(100, 100);
         PdfPCell logoCell = new PdfPCell(logo);
@@ -127,7 +121,7 @@ public class PDFHelper {
         PdfPCell invoiceInfoCell = new PdfPCell();
         invoiceInfoCell.setBorder(PdfPCell.NO_BORDER);
         invoiceInfoCell.setHorizontalAlignment(Element.ALIGN_RIGHT);
-        invoiceInfoCell.addElement(new Paragraph("Mã hóa đơn: " + invoice.getInvoiceID(), new Font(unicodeFont, 12, Font.BOLD, BaseColor.BLACK)));
+        invoiceInfoCell.addElement(new Paragraph("Mã hóa đơn: " + invoice.getInvoiceID(), new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD, BaseColor.BLACK)));
         headerTable.addCell(invoiceInfoCell);
 
         document.add(headerTable);
